@@ -5,7 +5,6 @@ focus on text input when clicked on*/
 
 ul {
 	list-style: none;
-	width: 75%;
 }
 
 h2 {
@@ -16,11 +15,15 @@ li {
 	padding: 2px;
 }
 
-.personbox:nth-child(even) ul{
+.personbox:nth-child(even){
 	background: lightyellow;
 }
 
-.personbox:nth-child(odd) ul{
+.personbox:nth-child(odd){
 	background: lightblue;
 }
 
+.personbox {
+	width: 75%;
+	margin: 0 0 0 10%;
+}

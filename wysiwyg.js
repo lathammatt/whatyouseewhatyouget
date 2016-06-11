@@ -41,22 +41,63 @@ var famous = [
 }
 ];
 
+
+
+// dotted border when clicked
+// text input focus
+// 
+// type in input, bio updates
+// after enter key, input clears
+
+
+
+
 var userChanges = document.getElementById("input");
 var output = document.getElementById("main");
 
 var counter = 0;
 
-for (; counter < 5; counter++){
-	output.innerHTML += `<div class="personbox" id="person-${counter}"><ul><li><h2>Occupation:</h2>${famous[counter].title}</li><li><h2>Name:</h2>${famous[counter].name}</li><li><h2>Bio:</h2>${famous[counter].bio}</li><li><h2>Years Lived:</h2>${famous[counter].lifespan.birth}-${famous[counter].lifespan.death}</li></div>`;
-	console.log("output", famous[counter]);
-}
+for (; counter < famous.length; counter++){
+	output.innerHTML += `<div class="personbox" id="person-${counter}"><ul><li><h2>Occupation:</h2>${famous[counter].title}</li><li><h2>Name:</h2>${famous[counter].name}</li><li><h2>Bio:</h2><div id="bio-${counter}">${famous[counter].bio}</div></li><li><h2>Years Lived:</h2>${famous[counter].lifespan.birth}-${famous[counter].lifespan.death}</li></div>`;
+};
 
 var personnel = document.getElementsByClassName("personbox");
 
 
 
 for (var i = 0; i > personnel.length; i++){
-	personnel[i].addEventListener("click", function(event){
-		// click logic here
+	personnel[i].addEventListener("click", function borderIt(event){
+		personnel.classList.toggle("caged");
+		console.log("event", event);
 	});
 };
+
+userChanges.addEventListener("keyup", function processKeys(event){
+	if (event.keyCode !== 13){
+		// bio update action
+	} else {
+		userChanges.value = "";
+		console.log("return", event);
+		}
+});
+
+
+// how to register clicked div
+// how to add border to said div
+// how to direct userChanges.value to bio div
+// child node? guinea pig example?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

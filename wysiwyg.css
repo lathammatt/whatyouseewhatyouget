@@ -2,3 +2,25 @@
 evens are yellow
 odds are light blue
 focus on text input when clicked on*/
+
+ul {
+	list-style: none;
+	width: 75%;
+}
+
+h2 {
+	margin: 0px;
+}
+
+li {
+	padding: 2px;
+}
+
+.personbox:nth-child(even) ul{
+	background: lightyellow;
+}
+
+.personbox:nth-child(odd) ul{
+	background: lightblue;
+}
+

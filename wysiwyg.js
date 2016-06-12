@@ -58,7 +58,8 @@ var output = document.getElementById("main");
 var counter = 0;
 
 for (; counter < famous.length; counter++){
-	output.innerHTML += `<div class="personbox" id="person-${counter}"><ul><li><h2>Occupation:</h2>${famous[counter].title}</li><li><h2>Name:</h2>${famous[counter].name}</li><li><h2>Bio:</h2><div id="bio-${counter}">${famous[counter].bio}</div></li><li><h2>Years Lived:</h2>${famous[counter].lifespan.birth}-${famous[counter].lifespan.death}</li></div>`;
+	var people = `<div class="personbox" id="person-${counter}"><ul><li><h2>Occupation:</h2>${famous[counter].title}</li><li><h2>Name:</h2>${famous[counter].name}</li><li><h2>Bio:</h2><div id="bio-${counter}">${famous[counter].bio}</div></li><li><h2>Years Lived:</h2>${famous[counter].lifespan.birth}-${famous[counter].lifespan.death}</li></div>`;
+	output.innerHTML += people;
 };
 
 var personnel = document.getElementsByClassName("personbox");

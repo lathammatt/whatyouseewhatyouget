@@ -66,9 +66,9 @@ for (; counter < famous.length; counter++){
 	listStart.className = "list";
 	listStart.id = "list-" + `${counter}`;
 	mainPeeps.appendChild(listStart);
-	var mouse = document.createAttribute("onclick");
-	mouse.value = "clickIt()";
-	listStart.setAttributeNode(mouse);
+	// var mouse = document.createAttribute("onclick");
+	// mouse.value = "clickIt()";
+	// listStart.setAttributeNode(mouse);
 	var picture = document.createElement("img");
 	listStart.appendChild(picture);
 	picture.className = "property";
@@ -109,16 +109,16 @@ for (; counter < famous.length; counter++){
 	dates.appendChild(document.createTextNode(famous[counter].lifespan.birth + "-" + famous[counter].lifespan.death));
 };
 
-var personnel = document.getElementsByClassName("personbox");
+// var personnel = document.getElementsByClassName("personbox");
 
 
 
-for (var i = 0; i > personnel.length; i++){
-	personnel[i].addEventListener("click", function borderIt(event){
-		console.log("event", event);
-		personnel.classList.toggle("caged");
-	});
-};
+// for (var i = 0; i > personnel.length; i++){
+// 	personnel[i].addEventListener("click", function borderIt(event){
+// 		console.log("event", event);
+// 		personnel.classList.toggle("caged");
+// 	});
+// };
 
 userChanges.addEventListener("keyup", function processKeys(event){
 	if (event.keyCode !== 13){
@@ -129,16 +129,23 @@ userChanges.addEventListener("keyup", function processKeys(event){
 		}
 });
 
-// var dotted = document.getElementsByClassName("list");
+var dotted = document.getElementsByClassName("list");
+
 
 // for (var i = 0; i < dotted.length; i++) {
 // 	console.log("event", event);
 //   	dotted[i].addEventListener("click", function (event) {
 //   	.classList.add("dotted");
 // })};
-function clickIt(event){
-	listStart.classList.toggle("caged");
-}
+
+for (var i = 0; i < dotted.length; i++) {
+	dotted[i].addEventListener("click", function (event) {
+		this.classList.toggle('caged');
+		console.log("event", event);
+		
+		});
+
+};
 
 
 

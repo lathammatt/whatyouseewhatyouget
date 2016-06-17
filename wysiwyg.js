@@ -43,9 +43,6 @@ var famous = [
 
 
 
-// dotted border when clicked
-// text input focus
-// 
 // type in input, bio updates
 // after enter key, input clears
 
@@ -53,7 +50,7 @@ var famous = [
 
 
 var userChanges = document.getElementById("input");
-var output = document.getElementById("main");
+// var output = document.getElementById("main");
 
 var counter = 0;
 
@@ -66,9 +63,6 @@ for (; counter < famous.length; counter++){
 	listStart.className = "list";
 	listStart.id = "list-" + `${counter}`;
 	mainPeeps.appendChild(listStart);
-	// var mouse = document.createAttribute("onclick");
-	// mouse.value = "clickIt()";
-	// listStart.setAttributeNode(mouse);
 	var picture = document.createElement("img");
 	listStart.appendChild(picture);
 	picture.className = "property";
@@ -109,20 +103,12 @@ for (; counter < famous.length; counter++){
 	dates.appendChild(document.createTextNode(famous[counter].lifespan.birth + "-" + famous[counter].lifespan.death));
 };
 
-// var personnel = document.getElementsByClassName("personbox");
 
-
-
-// for (var i = 0; i > personnel.length; i++){
-// 	personnel[i].addEventListener("click", function borderIt(event){
-// 		console.log("event", event);
-// 		personnel.classList.toggle("caged");
-// 	});
-// };
 
 userChanges.addEventListener("keyup", function processKeys(event){
 	if (event.keyCode !== 13){
-		// bio update action
+// need to set up event listener for the bio section - child of? - then
+// output.innerHTML = `${userChanges.value}`;
 	} else {
 		userChanges.value = "";
 		console.log("return", event);
@@ -130,29 +116,33 @@ userChanges.addEventListener("keyup", function processKeys(event){
 });
 
 var dotted = document.getElementsByClassName("list");
+var output = 0;
 
 
-// for (var i = 0; i < dotted.length; i++) {
-// 	console.log("event", event);
-//   	dotted[i].addEventListener("click", function (event) {
-//   	.classList.add("dotted");
-// })};
+var focus = null;
 
 for (var i = 0; i < dotted.length; i++) {
 	dotted[i].addEventListener("click", function (event) {
-		this.classList.toggle('caged');
+		// var boxes = make variable for all personbox class? then use it in place of listStart below to remove caged class
+		this.classList.toggle("caged");
+		listStart.not(this).removeClass("caged");
+		focus == true;
 		console.log("event", event);
-		
+		document.getElementById("input").focus();
+
 		});
 
 };
 
+if (focus == true) {
+};
 
 
-// how to register clicked div
-// how to add border to said div
+
+
+
+
 // how to direct userChanges.value to bio div
-// child node? guinea pig example?
 
 
 

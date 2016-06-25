@@ -1,18 +1,18 @@
 /*dotted border around element when clicked
-evens are yellow
-odds are light blue
 focus on text input when clicked on*/
 
 ul {
 	list-style: none;
 }
 
-h2 {
+.key {
 	margin: 0px;
+	font-weight: bold;
 }
 
-li {
+.property {
 	padding: 2px;
+	font-size: .85rem;
 }
 
 .personbox:nth-child(even){
@@ -26,4 +26,14 @@ li {
 .personbox {
 	width: 75%;
 	margin: 0 0 0 10%;
+}
+
+img {
+	width: 25%;
+	height: 25%;
+	margin: 0 0 0 33%;	
+}
+
+.caged {
+	border: 2px black dotted;
 }
